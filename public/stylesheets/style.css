@@ -1,7 +1,53 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 960px;
+  margin: 0 auto;
+  font-family: "Droid Sans", sans-serif;
+  color: #777;
 }
-a {
-  color: #00b7ff;
+#header {
+  height: 100px;
+  width: 100%;
+  margin-top: 1em;
+}
+#navigation > li {
+  list-style-type: none;
+  float: left;
+  margin-right: 2em;
+}
+#sidebar {
+  width: 300px;
+  float: right;
+  border-left: 1px solid #000;
+  height: 100%;
+}
+#sidebar > .feature {
+  height: 240px;
+  width: 200px;
+  margin: 20px auto;
+  background: #ffc0cb;
+}
+#sidebar > .feature > div {
+  height: 198px;
+  width: 198px;
+  border: 1px solid #ffc0cb;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#sidebar > .feature > div > img {
+  width: 200px;
+}
+#sidebar > .feature > p {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.7em;
+  font-style: uppercase;
+}
+#content {
+  border-left: 1px solid #000;
+  margin-right: 310px;
+  height: 100%;
+}
+#content > div {
+  width: 90%;
+  margin: 0 auto;
 }

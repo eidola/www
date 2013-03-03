@@ -1,15 +1,17 @@
 extends layout
 
 block content
-  #wrapper
-    #logo
-      img(src='/images/logo.png')
-    #display
-      
-        
-      -for (var id in items)
-        - var item = items[id]
-        div
-          a(href='/release/#{id}') #{item.title} - #{item.Artist}
-      
-    include footer
+  #releases
+    h2 RELEASES
+    -for (var id in items)
+    - var item = items[id]
+      div.release
+        div.title #{item.title} | #{item.Artist}
+        div.description
+          div.textwrapper 
+            p #{item.description}
+          div.imgwrapper
+            img(src='/images/#{item._id}/cover.jpg')
+
+
+include footer

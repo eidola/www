@@ -1,5 +1,85 @@
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-a
-  color: #00B7FF
+  width 960px
+  margin 0 auto
+  font-family "Droid Sans",sans-serif
+  color #777
+
+#header
+  height 100px
+  width 100%
+  margin-top 1em
+
+#navigation
+  & > li
+    list-style-type none
+    float left
+    margin-right 2em
+
+#sidebar
+  width 300px
+  float right
+  border-left 1px solid #000
+  height 100%
+  & > .feature
+    height 240px
+    width 200px
+    margin 20px auto
+    background #FFC0CB
+    & > div
+      height 198px
+      width 198px
+      border 1px solid #FFC0CB
+      overflow hidden
+      margin 0 auto
+      & > img
+        width 200px
+    & > p
+      text-transform uppercase
+      text-align center
+      font-size 0.7em
+      font-style uppercase
+
+#content
+  border-left 1px solid #000
+  margin-right 310px
+  height 100%
+  & > div
+    width 90%
+    margin 0 auto
+
+#releases
+  width 90%
+  margin 0 auto
+  & > .release
+    height 275px
+    & > .title
+      margin-bottom 15px
+    & > .description
+      height 200px
+      width 100%
+      background #FFC0CB
+      margin-top 2px
+      & > .textwrapper
+        margin-left 200px
+        height 200px
+        overflow hidden
+      & > .imgwrapper
+        margin-top -210px
+        margin-left -10px
+        height 200px
+        width 200px
+        overflow hidden
+
+}
+  .release
+    ul
+      list-style-type none
+      font-size 0.8em
+      float right
+
+.release
+  ul
+    & > li
+      float left
+      margin-left 10px
+

@@ -21,7 +21,7 @@ db.collection('releases').find().toArray(function(err, results) {
 
 // handler for displaying the items
 exports.releases = function(req, res) {
-    res.render('releases', { title: 'Ninja Store - Items',  items:lps });
+    res.render('releases', { title: 'Eidola Records | Releases',  items:lps });
 };
 
 // handler for displaying individual items
