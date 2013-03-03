@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  #wrapper
+    #logo
+      img(src='/images/logo.png')
+    #display
+      
+        
+      -for (var id in items)
+        - var item = items[id]
+        div
+          a(href='/release/#{id}') #{item.title} - #{item.Artist}
+      
+    include footer
