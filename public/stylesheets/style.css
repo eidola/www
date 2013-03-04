@@ -51,3 +51,40 @@ body {
   width: 90%;
   margin: 0 auto;
 }
+#releases {
+  width: 90%;
+  margin: 0 auto;
+}
+#releases > .release {
+  height: 275px;
+}
+#releases > .release > .title {
+  margin-bottom: 15px;
+}
+#releases > .release > .description {
+  height: 200px;
+  width: 100%;
+  background: #ffc0cb;
+  margin-top: 2px;
+}
+#releases > .release > .description > .textwrapper {
+  margin-left: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+#releases > .release > .description > .imgwrapper {
+  margin-top: -210px;
+  margin-left: -10px;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+}
+#releases .release ul {
+  list-style-type: none;
+  font-size: 0.8em;
+  float: right;
+}
+.release ul > li {
+  float: left;
+  margin-left: 10px;
+}
