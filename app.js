@@ -2,10 +2,12 @@
 /**
  * Module dependencies.
  */
-var eidola = require('./routes/eidola');
+//var eidola = require('./routes/eidola');
 var express = require('express')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , eidola = require('./routes/eidola')
+  , releases = require('./routes/releases');
 
 var app = express();
 
@@ -30,8 +32,8 @@ app.configure('development', function(){
 });
 
 app.get('/', eidola.index);
-app.get('/releases', eidola.releases);
-app.get('/release/:id',eidola.release);
+app.get('/releases', releases.list);
+app.get('/releases/:id',releases.view);
 
 http.createServer(app).listen(app.get('port'), app.get('ipaddr'), function(){
   console.log("Express server listening on port " + app.get('port'));

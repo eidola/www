@@ -1,13 +1,14 @@
 extends layout
 
 block content
-  #wrapper
-    #logo
-      
-    #display
-      
-      
-      p The #{name.toLowerCase()} is one of the must-have items for any aspiring ninja. It costs just $#{price} on our store.
-      p Buy it today!
-      
-    include footer
+  #releases
+    h2 #{item.title}
+    div.release
+      div.title #{item.Artist} 
+      div.description
+        div.textwrapper 
+          p #{item.description}
+        div.imgwrapper
+          img(src='/images/#{item._id}/cover.jpg')
+
+ 

@@ -6,7 +6,8 @@ block content
     -for (var id in items)
     - var item = items[id]
       div.release
-        div.title #{item.title} | #{item.Artist}
+        div.title 
+          a(href='/releases/#{item._id}')'#{item.title} | #{item.Artist}
         div.description
           div.textwrapper 
             p #{item.description}
@@ -14,4 +15,3 @@ block content
             img(src='/images/#{item._id}/cover.jpg')
 
 
-include footer

@@ -7,12 +7,16 @@ html
     div#header
       h1 EIDOLA RECORDS
       ul#navigation
-        li ARTISTS
-        li RELEASES
-        li GIGS
-        li MERCHANDISE
+        li 
+          a(href='/artists') ARTISTS
+        li 
+          a(href='/releases') RELEASES
+        li
+          a(href='/gigs') GIGS
+        li
+          a(href='/merchandise') MERCHANDISE
     div#main
       div#content
         block content
     div#sidebar
-   
+   include footer
