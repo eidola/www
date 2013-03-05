@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h2 New Release
+  form(name="input", action="_newrelease", method="post")
+  | Title:
+  input(type="text", name="title")
+
+  | Artist:
+  input(type="text", name="artist")

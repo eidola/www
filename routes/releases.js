@@ -20,8 +20,8 @@ exports.view = function(req, res) {
 	res.render('release', { title: 'Eidola Records | ' + result.title, item:result });
     });
 };
-/*
+
 exports.create = function(req, res) {
     res.render('newrelease', {title: 'Eidola Records | Create New Release' });
 };
-*/
+

@@ -30,11 +30,16 @@ app.configure(function(){
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
-
+/* Get */
 app.get('/', eidola.index);
 app.get('/releases', releases.list);
-app.get('/releases/:id',releases.view);
-
+app.get('/releases/new', releases.create);
+app.get('/releases/:id', releases.view);
+/* Post */
+app.post('/releases/_newrelease', function(req, res, next) {
+    console.log(req.body);
+    console.log(req.files);
+})
 http.createServer(app).listen(app.get('port'), app.get('ipaddr'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });

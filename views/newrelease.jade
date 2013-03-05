@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 New Release
+  form(id="releaseform", name="input", action="/releases/_newrelease", method="post", enctype="multipart/form-data")
+    | Title:
+    input(type="text", name="title")
+    | Tracks:
+    div#files
+      input(type="file", name="file_1")
+    button(onClick="addFileInputToForm();") +
+  input(type="submit")
+  
