@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  #releases
+    h2 RELEASES
+    table(class="table-striped table-hover")
+      thead
+        tr
+          th Title
+          th Artist
+          th Control
+      tbody
+        -for (var id in items)
+          -var item = items[id]
+            tr
+              td #{item.title}
+              td #{item.artist}
+              td 
+                form(id="delete", class=".form-horizontal", name="input", action="/releases/delete/#{item._id}", method="post", enctype="multipart/form-data")
+                  submit(class="btn btn-mini") Delete
+            

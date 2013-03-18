@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  #releases
+    h2 RELEASES
+    -for (var id in items)
+      -var item = items[id]
