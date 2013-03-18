@@ -4,6 +4,13 @@ body {
   font-family: "Droid Sans", sans-serif;
   color: #777;
 }
+form {
+  width: 90%;
+  margin: 0 auto;
+}
+form > input {
+  width: 70%;
+}
 #header {
   height: 100px;
   width: 100%;

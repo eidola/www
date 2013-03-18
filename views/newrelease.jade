@@ -5,6 +5,12 @@ block content
   form(id="releaseform", name="input", action="/releases/_newrelease", method="post", enctype="multipart/form-data")
     | Title:
     input(type="text", name="title")
+    | Artist:
+    input(type="text", name="artist", id="artistinput")
+    | Description:
+    textarea(name="description", rows="10")
+    | Cover:
+    input(type="file", name="cover");
     | Tracks:
     div#files
       input(type="file", name="file_1")
