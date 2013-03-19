@@ -16,6 +16,7 @@ block content
               td #{item.title}
               td #{item.artist}
               td 
-                form(id="delete", class=".form-horizontal", name="input", action="/releases/delete/#{item._id}", method="post", enctype="multipart/form-data")
-                  submit(class="btn btn-mini") Delete
+                form(class=".form-horizontal", action="/releases/delete", method="post", enctype="multipart/form-data")
+                  input(value="#{item._id}", type="hidden", name="id")                  
+                  input(type="submit", class="btn btn-mini", value="Delete")
             

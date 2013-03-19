@@ -39,7 +39,7 @@ app.get('/releases/:id', releases.view);
 
 /* Post */
 app.post('/releases/_newrelease', releases._create);
-app.post('/releases/delete/:id', releases._delete);
+app.post('/releases/delete', releases._delete);
 
 http.createServer(app).listen(app.get('port'), app.get('ipaddr'), function(){
   console.log("Express server listening on port " + app.get('port'));

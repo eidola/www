@@ -39,13 +39,44 @@ var Artist = mongoose.model('artists', artistSchema);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-
-
+function setArtistNameInTempArray(_release, _artists,i,j,callback) {
+    var _objectId = _artists[i].toString();
+    Artist.findOne({_id: mongoose.Types.ObjectId(_objectId)},function(err, _artist){
+	if(err) throw err;
+	console.log(_artist.name);
+	callback(null,_artist.name,i,j);
+    });
+}
+function getArtistName(Releases, callback){
+    var _releases = Releases;
+    var c = 0;
+    for(var id in _releases) {
+	var _release = _releases[id];
+	var _artists = _release.artist;
+	for(var i=0;i<_artists.length;i++) {
+	    setArtistNameInTempArray(_release,_artists,id,i,function(err,_artist,i,j) {
+	    	if(err) throw err;
+		_releases[i].artist[j] = _artist;
+		c++;
+		checkForCallback(callback,_releases,c,Releases.length);
+	    });
+	}
+    }
+    
+}
+function checkForCallback(callback,returnvalue,counter,condition) {
+    if(condition == counter) {
+	callback(null,returnvalue);
+    }
+}
 // handler for displaying the items
 exports.list = function(req, res) {
     Release.find(function(err, Releases) {
 	if(err) throw err;
-	res.render('releases', { title: 'Eidola Records | Releases',  items: Releases });
+	getArtistName(Releases, function(err, _releases) {
+	    if(err) throw err;
+	    res.render('releases', { title: 'Eidola Records | Releases',  items: _releases });
+	});
     });
 };
 
@@ -96,6 +127,11 @@ exports._create = function(req, res) {
     res.redirect('/releases');
 };
 exports._delete = function(req, res) {
-    
+    console.log(req.body.id);
+    Release.findOne({ _id:  mongoose.Types.ObjectId(req.body.id)}, function(err, result) {
+	if(err) throw err;
+	result.remove();
+    });
+    res.redirect('/releases/admin');
 };
 
