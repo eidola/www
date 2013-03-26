@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h2 New Release
+  form(id="releaseform", class=".form-horizontal", name="input", action="/releases/_updaterelease", method="post", enctype="multipart/form-data")
+    label Title:
+    input(type="text", name="title", value='#{release.title}')
+    label Artist:
+      select(name="artist")
+        -for (var id in artists)
+          -var artist = artists[id]
+          -if (artist.name = release.artist)
+            option(value="#{artist._id}", selected) #{artist.name}
+          -else
+            option(value="#{artist._id}") #{artist.name}
+    label Tracks
+    table(class="table-striped table-hover")      
+        thead
+          tr 
+            th #
+            th Track
+        tbody
+          -for(var i =0; i< release.tracks.length; i++)
+            -var track = release.tracks[i]
+              tr
+                td #{track.number}
+                  i(class="icon-arrow-up")
+                  i(class="icon-arrow-down")
+                td 
+                  input(type="text",name="track"+i,value="#{track.title}")
+              

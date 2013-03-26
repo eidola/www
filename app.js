@@ -35,6 +35,7 @@ app.get('/', eidola.index);
 app.get('/releases', releases.list);
 app.get('/releases/new', releases.create);
 app.get('/releases/admin', releases.admin);
+app.get('/releases/update/:id',releases.update);
 app.get('/releases/:id', releases.view);
 
 /* Post */

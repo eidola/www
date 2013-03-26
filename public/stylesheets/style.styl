@@ -28,7 +28,7 @@ form
   & > .feature
     height 240px
     width 200px
-    margin 20px auto
+        margin 20px auto
     background #FFC0CB
     & > div
       height 198px
@@ -56,24 +56,28 @@ form
   width 90%
   margin 0 auto
   & > .release
-    height 275px
+    position relative
+    min-height 275px
     & > .title
       margin-bottom 15px
     & > .description
-      height 200px
+      min-height 200px
       width 100%
       background #FFC0CB
       margin-top 2px
       & > .textwrapper
         margin-left 200px
-        height 200px
+        min-height 200px
         overflow hidden
       & > .imgwrapper
-        margin-top -210px
+        position absolute
+        margin-top -10px
         margin-left -10px
         height 200px
         width 200px
         overflow hidden
+      & > .tracks
+        margin 0 auto
 
   .release
     ul
@@ -86,4 +90,9 @@ form
     & > li
       float left
       margin-left 10px
-
+#preview
+  height 200px
+  width 200px
+  overflow hidden
+  img
+    width 200px

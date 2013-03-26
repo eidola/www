@@ -6,9 +6,12 @@ block content
     div.release
       div.title #{item.Artist} 
       div.description
-        div.textwrapper 
-          p #{item.description}
         div.imgwrapper
           img(src='#{item.cover}')
-
- 
+        div.textwrapper 
+          p #{item.description}
+        div#tracks
+          a(class="btn btn-small", href="#{item.download}")
+            i(class="icon-download-alt")
+            span  Download
+          

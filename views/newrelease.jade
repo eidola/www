@@ -13,10 +13,11 @@ block content
     label Description:
     textarea(name="description", rows="10", cols="2")
     label Cover:
-    input(type="file", name="cover");
+    div#preview    
+    input(type="file", name="cover", onchange="handleFiles(this)");
     label Tracks:
       div#files
-        input(type="file", name="file_1")
-      button(onClick="addFileInputToForm();return false;") +
+        input(type="file", name="tracks", multiple="multiple", id="tracks", onchange="handleFiles(this)")
+      ul#track-list
     input(type="submit", class="btn btn-primary", value="Save")
   
